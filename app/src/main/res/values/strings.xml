@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">ANDROID VERSIONS - LAB5</string>
+
+    <string-array name="apis">
+        <item>Cupcake</item>
+        <item>Donut</item>
+        <item>Eclair</item>
+        <item>Froyo</item>
+        <item>Gingerbread</item>
+        <item>Honeycomb</item>
+        <item>Ice Cream Sandwich</item>
+        <item>Jelly Bean</item>
+        <item>Kit kat</item>
+        <item>Lollipop</item>
+        <item>Marshmallow</item>
+        <item>Nougat</item>
+        <item>Oreo</item>
+        <item>Pie</item>
+        <item>Android 10</item>
+    </string-array>
+
+    <string-array name="versions">
+        <item>Ver. 1.5</item>
+        <item>Ver. 1.6</item>
+        <item>Ver. 2.0-2.1</item>
+        <item>Ver. 2.2-2.2.3</item>
+        <item>Ver. 2.3-2.3.7</item>
+        <item>Ver. 3.0-3.2.6</item>
+        <item>Ver. 4.0-4.0.4</item>
+        <item>Ver. 4.1-4.3.1</item>
+        <item>Ver. 4.4-4.4.4</item>
+        <item>Ver. 5.0-5.1.1</item>
+        <item>Ver. 6.0-6.0.1</item>
+        <item>Ver. 7.0-7.1.2</item>
+        <item>Ver. 8.0-8.1</item>
+        <item>Ver. 9.0</item>
+        <item>Ver. 10.0</item>
+    </string-array>
+
+    <string-array name="level">
+        <item>API Level 3</item>
+        <item>API Level 4</item>
+        <item>API Level 5-7</item>
+        <item>API Level 8</item>
+        <item>API Level 9-10</item>
+        <item>API Level 11-13</item>
+        <item>API Level 14-15</item>
+        <item>API Level 16-18</item>
+        <item>API Level 19-20</item>
+        <item>API Level 21-22</item>
+        <item>API Level 23</item>
+        <item>API Level 24-25</item>
+        <item>API Level 26-27</item>
+        <item>API Level 28</item>
+        <item>API Level 29</item>
+    </string-array>
+
+    <string-array name="relDate">
+        <item>Released April 27, 2009</item>
+        <item>Released September 15, 2009</item>
+        <item>Released October 26, 2009</item>
+        <item>Released May 20, 2010</item>
+        <item>Released December 6, 2010</item>
+        <item>Released February 22, 2011</item>
+        <item>Released October 18, 2011</item>
+        <item>Released July 9, 2012</item>
+        <item>Released October 31, 2013</item>
+        <item>Released November 12, 2014</item>
+        <item>Released October 5, 2015</item>
+        <item>Released August 22, 2016</item>
+        <item>Released August 21, 2017</item>
+        <item>Released August 6, 2018</item>
+        <item>Released September 3, 2019</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>This was the first release to officially use a codename based on a dessert item Cupcake, a theme used for all releases until Android Pie, with Android 10 using a number-only system.</item>
+        <item>The Android 1.6 – dubbed Donut – was released, based on Linux kernel 2.6.29. Included in the update were numerous new features.</item>
+        <item>It Expanded Account sync, allowing users to add multiple accounts to a device for synchronization of an email and contacts.</item>
+        <item>This Version Improved Microsoft Exchange support, including security policies, auto-discovery, GAL look-up, calendar synchronization and remote wipe.</item>
+        <item>The version has updated user interface design with increased simplicity and speed.</item>
+        <item> is the codename for the eighth version of Android, designed for devices with larger screen sizes, particularly tablets. </item>
+        <item> is the ninth version of the Android mobile operating system developed by Google. Unveiled on October 19, 2011, Android 4.0 builds upon the significant changes made by the tablet-only release Android Honeycomb, in an effort to create a unified platform for both smartphones and tablets.</item>
+        <item>is the tenth version of Android and the codename given to three major point releases of the Android mobile operating system developed by Google, spanning versions between 4.1 and 4.3.1. Some operating systems that run Android 4.3/4.4 are Asus Nexus 7 (2013).</item>
+        <item>is a codename for the Android mobile operating system and the eleventh version of Android. Unveiled on September 3, 2013, KitKat focused primarily on optimizing the operating system for improved performance on entry-level devices with limited resources.</item>
+        <item>is the fifth major version of the Android mobile operating system developed by Google, spanning versions between 5.0 and 5.1.1.[4] Unveiled on June 25, 2014 at the Google I/O 2014 conference,</item>
+        <item>is the sixth major version of the Android operating system and the 13th version of Android. First released as a beta build on May 28, 2015, it was officially released on October 5, 2015, with Nexus devices being the first to receive the update.</item>
+        <item> is the seventh major version and 14th original version of the Android operating system. First released as an alpha test version on March 9, 2016, it was officially released on August 22, 2016, with Nexus devices being the first to receive the update. </item>
+        <item>is the eighth major release and the 15th version of the Android mobile operating system. It was first released as an alpha quality developer preview in March 2017 and released to the public on August 21, 2017.</item>
+        <item>is the ninth major release and the 16th version of the Android mobile operating system. It was first released as a developer preview on March 7, 2018, and released publicly on August 6, 2018.</item>
+        <item>Google released the first beta of Android 10 under the preliminary name "Android Q" on March 13, 2019, exclusively on their Pixel phones, including the first-generation Pixel and Pixel XL devices</item>
+    </string-array>
+
+
+</resources>
