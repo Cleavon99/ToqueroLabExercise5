@@ -6,20 +6,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     String[] api, ver, level, date, description;
     ListView list;
+    private File file;
+    private File folder;
     int[] cLogo = {R.drawable.cupcake, R.drawable.donut, R.drawable.eclair, R.drawable.froyo, R.drawable.gingerbread,
             R.drawable.honeycomb, R.drawable.icecream, R.drawable.jellybean, R.drawable.kitkat, R.drawable.lollipop,
             R.drawable.marshmallow, R.drawable.nougat, R.drawable.oreo, R.drawable.pie, R.drawable.android10};
@@ -49,31 +58,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, final int i, long id) {
 
-        final File folder = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
-        File file = new File(folder, "AndroidVersions.txt");
+        folder = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
+        file = new File(folder, "AndroidVersions.txt");
         try {
 
             FileOutputStream fos = new FileOutputStream(file);
-            String choiceApi = "Android Version Name: " + VersionList.get(i).getApis();
+            String choiceApi = VersionList.get(i).getApis();
             fos.write(choiceApi.getBytes());
-            String choiceVersions = "\nVersion: " + VersionList.get(i).getVersions();
-            fos.write(choiceVersions.getBytes());
-            String choiceReleaseDate = "\nRelease Date: " + VersionList.get(i).getRelDate();
+            String choiceReleaseDate = "\n" + VersionList.get(i).getRelDate();
             fos.write(choiceReleaseDate.getBytes());
-            String choiceDesc = "\nDescription: " + VersionList.get(i).getDescription();
+            String choiceVersions = "\n" + VersionList.get(i).getVersions();
+            fos.write(choiceVersions.getBytes());
+            String choiceDesc = "\n" + VersionList.get(i).getDescription();
             fos.write(choiceDesc.getBytes());
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.setTitle(VersionList.get(i).getApis());
             dialog.setIcon(VersionList.get(i).getLogo());
-            final String api = VersionList.get(i).getApis();
-            final String ver = VersionList.get(i).getVersions();
-            final String date = VersionList.get(i).getRelDate();
+//            final String api = VersionList.get(i).getApis();
+//            final String ver = VersionList.get(i).getVersions();
+//            final String date = VersionList.get(i).getRelDate();
             dialog.setMessage(VersionList.get(i).getDescription());
             dialog.setNeutralButton("CLOSE", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
-                    Toast.makeText(MainActivity.this, api + "" + "\n" + date, Toast.LENGTH_LONG).show();
+                    String readData = readInput();
+                    Toast.makeText(MainActivity.this, readData, Toast.LENGTH_LONG).show();
                 }
             });
             dialog.create().show();
@@ -86,6 +96,39 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
 
+    }
+
+    private String readInput() {
+        FileInputStream stream = null;
+        file = new File(folder, "AndroidVersions.txt");
+        StringBuilder sb = new StringBuilder();
+
+        try {
+            BufferedReader oBuffer = new BufferedReader(new FileReader(file));
+            String i;
+            int count = 0;
+            while ((i = oBuffer.readLine()) != null) {
+                count++;
+                sb.append(i + " \n");
+                if (count == 2) {
+                    break;
+                }
+            }
+            return sb.toString();
+        } catch (FileNotFoundException e) {
+            Log.d("error", "File not found");
+        } catch (IOException e) {
+            Log.d("error", "IO error");
+        } finally {
+            if (stream != null) {
+                try {
+                    stream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
     }
 }
 
